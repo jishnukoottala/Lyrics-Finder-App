@@ -11,16 +11,17 @@ const baseUrl = process.env.PUBLIC_URL;
 
 class App extends Component {
   render() {
+   
     return (
       <Provider>
-      <Router>
+      <Router basename={baseUrl}>
       <React.Fragment>
       <Navbar/>
  
       <div className="container">
       <Switch>
-      <Route exact path={baseUrl + "/"}  component={Index} />
-      <Route exact path={baseUrl + "/lyrics/track/:id"} component={Lyrics} />
+      <Route exact path="/" component={Index} />
+      <Route exact path="/lyrics/track/:id" component={Lyrics} />
       </Switch> 
       </div>
       </React.Fragment>
