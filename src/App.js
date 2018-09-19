@@ -5,7 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Index from './components/layout/Index';
 import {Provider} from './context';
 import Lyrics from './components/tracks/Lyrics';
-
+const baseUrl = process.env.PUBLIC_URL; 
 
 
 
@@ -19,8 +19,8 @@ class App extends Component {
  
       <div className="container">
       <Switch>
-      <Route exact path="/" component={Index} />
-      <Route exact path="/lyrics/track/:id" component={Lyrics} />
+      <Route exact path={baseUrl + "/"}  component={Index} />
+      <Route exact path={baseUrl + "/lyrics/track/:id"} component={Lyrics} />
       </Switch> 
       </div>
       </React.Fragment>
